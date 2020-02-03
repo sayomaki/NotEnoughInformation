@@ -47,13 +47,13 @@ public class IteratorPlayers extends ScriptedIterator {
         return String.format("{\"allowFriendFire\":%b,\"collisionRule\":\"%s\",\"color\":\"%s\",\"deathMessageVisibility\":\"%s\",\"displayName\":\"%s\",\"name\":\"%s\",\"nameTagVisibility\":\"%s\",\"seeFriendlyInvisibles\":%b,\"prefix\":\"%s\",\"suffix\":\"%s\"}",
                              team.getAllowFriendlyFire(),
                              team.getCollisionRule().name,
-                             team.getColor() == null ? "reset" : team.getColor().getFriendlyName(),
+                             team.getChatFormat() == null ? "reset" : team.getChatFormat().getFriendlyName(),
                              team.getDeathMessageVisibility().internalName,
-                             team.getDisplayName(),
-                             team.getName(),
+                             team.getTeamName(),
+                             team.getRegisteredName(),
                              team.getNameTagVisibility().internalName,
                              team.getSeeFriendlyInvisiblesEnabled(),
-                             team.getPrefix(),
-                             team.getSuffix());
+                             team.getColorPrefix(),
+                             team.getColorSuffix());
     }
 }
