@@ -27,14 +27,14 @@ public class IteratorTeams extends ScriptedIterator {
                              this.begin();
                              this.add("TEAMALLOWFRIENDLYFIRE", team.getAllowFriendlyFire());
                              this.add("TEAMCOLLISIONRULE", team.getCollisionRule().name);
-                             this.add("TEAMCOLOR", team.getColor() != null ? team.getColor().getFriendlyName() : "reset");
+                             this.add("TEAMCOLOR", team.getChatFormat() != null ? team.getChatFormat().getFriendlyName() : "reset");
                              this.add("TEAMDEATHMESSAGEVISIBILITY", team.getDeathMessageVisibility().internalName);
-                             this.add("TEAMDISPLAYNAME", team.getDisplayName());
-                             this.add("TEAMNAME", team.getName());
+                             this.add("TEAMDISPLAYNAME", team.getTeamName());
+                             this.add("TEAMNAME", team.getRegisteredName());
                              this.add("TEAMNAMETAGVISIBILITY", team.getNameTagVisibility().internalName);
                              this.add("TEAMSEEFRIENDLYINVISIBLES", team.getSeeFriendlyInvisiblesEnabled());
-                             this.add("TEAMPREFIX", team.getPrefix());
-                             this.add("TEAMSUFFIX", team.getSuffix());
+                             this.add("TEAMPREFIX", team.getColorPrefix());
+                             this.add("TEAMSUFFIX", team.getColorSuffix());
                              this.add("TEAMMEMBERS", team.getMembershipCollection());
                              this.end();
                          } catch (NullPointerException e) {
@@ -42,14 +42,14 @@ public class IteratorTeams extends ScriptedIterator {
     
                              System.out.println("FriendlyFire: " + team.getAllowFriendlyFire());
                              System.out.println("Collision: " + team.getCollisionRule());
-                             System.out.println("Color: " + team.getColor());
+                             System.out.println("Color: " + team.getChatFormat());
                              System.out.println("DeathMessage: " + team.getDeathMessageVisibility());
-                             System.out.println("DisplayName: " + team.getDisplayName());
-                             System.out.println("Name: " + team.getName());
+                             System.out.println("DisplayName: " + team.getTeamName());
+                             System.out.println("Name: " + team.getRegisteredName());
                              System.out.println("NameTagVisibility: " + team.getNameTagVisibility());
                              System.out.println("SeeFriendlyInvisibles: " + team.getSeeFriendlyInvisiblesEnabled());
-                             System.out.println("Prefix: " + team.getPrefix());
-                             System.out.println("Suffix: " + team.getSuffix());
+                             System.out.println("Prefix: " + team.getColorPrefix());
+                             System.out.println("Suffix: " + team.getColorSuffix());
                              
                              System.out.println("ERROR DEBUG END ------------------------------------------------");
                              e.printStackTrace();
