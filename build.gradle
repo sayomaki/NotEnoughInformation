@@ -21,7 +21,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
 
@@ -34,6 +34,18 @@ ext {
 
 // Use LiteLoader environment
 apply plugin: 'net.minecraftforge.gradle.liteloader'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:unchecked"
+    options.deprecation = true
+}
 
 // Configure minecraft environment based on properties
 minecraft {
@@ -54,7 +66,7 @@ repositories {
 // Depend on macros of the specified version (API is acquired via the dev POM)
 dependencies {
     deobfCompile "net.eq2online:macrosdev:$modVersion"
-    compile files("libs/module_documentorAPI-0.1-26.1-0.15.4-mc1.12.1.jar")
+    // compile files("libs/module_documentorAPI-0.1-26.1-0.15.4-mc1.12.1.jar")
 }
 
 afterEvaluate {
